@@ -33,6 +33,7 @@ public class App
             testAccounts.get(i).withdraw(rand.nextInt(100));
             System.out.println(testAccounts.get(i));
             testAccounts.get(i).deposit(rand.nextInt(100));
+            System.out.println(testAccounts.get(i));
         }
 
 
