@@ -2,6 +2,12 @@ package com.qa;
 
 public abstract class BankAccount {
 
+    public BankAccount( String accountHolderName, double balance, double minimumBalance) {
+        this.balance = balance;
+        this.accountHolderName = accountHolderName;
+        this.minimumBalance = minimumBalance;
+    }
+
     public double getBalance() {
         return balance;
     }
@@ -19,7 +25,9 @@ public abstract class BankAccount {
     }
 
     public void withdraw(double moneyOut){
-        this.setBalance(this.getBalance()-moneyOut);
+        if (moneyOut <= this.getBalance())
+            this.setBalance(this.getBalance()-moneyOut);
+        else System.out.println("Sorry that you're poor.");
     }
 
 }
