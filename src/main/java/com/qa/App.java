@@ -30,8 +30,9 @@ public class App
             }
 
             System.out.println(testAccounts.get(i));
-            testAccounts.get(i).deposit(250);
-            System.out.println("Amount after depositing £250: £" + testAccounts.get(i).getBalance());
+            testAccounts.get(i).withdraw(rand.nextInt(100));
+            System.out.println(testAccounts.get(i));
+            testAccounts.get(i).deposit(rand.nextInt(100));
         }
 
 
