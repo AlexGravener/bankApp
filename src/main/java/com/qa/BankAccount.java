@@ -25,9 +25,20 @@ public abstract class BankAccount {
     }
 
     public void withdraw(double moneyOut){
+        if(!isTwoDecimalPlaces(moneyOut) || moneyOut <= 0) { //validity checks
+            System.out.println("Invalid operation");
+            return;
+        }
         if (moneyOut <= this.getBalance())
             this.setBalance(this.getBalance()-moneyOut);
         else System.out.println("Sorry that you're poor.");
+    }
+
+
+    public boolean isTwoDecimalPlaces(Double input){
+        String[] splitter = input.toString().split("\\.");
+        int decimalLength = splitter[1].length();  // After Decimal Count
+        return decimalLength <= 2;
     }
 
 }
