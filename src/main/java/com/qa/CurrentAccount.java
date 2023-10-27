@@ -6,13 +6,12 @@ public class CurrentAccount extends BankAccount{
     }
 
     public CurrentAccount(String accountHolderName, double balance, double minimumBalance) {
-        super(accountHolderName, balance);
-        this.setMinimumBalance(minimumBalance);
+        super(accountHolderName, balance, minimumBalance);
     }
 
     @Override
     public String toString() {
-        return String.format("Account name: %s\nCurrent balance: £%.2f\nOverdraft available: £%.2f\nAvailable balance: £%.2f", this.getAccountHolderName(),
+        return String.format("\nAccount name: %s\nCurrent balance: £%.2f\nOverdraft available: £%.2f\nAvailable balance: £%.2f", this.getAccountHolderName(),
         this.getBalance(), Math.abs(this.getMinimumBalance()), Math.abs(this.getMinimumBalance()) + this.getBalance());
     }
 }
