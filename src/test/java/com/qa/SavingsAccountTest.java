@@ -38,7 +38,6 @@ public class SavingsAccountTest {
         account1.withdraw(amount);
         finalBalance = account1.getBalance();
         assertEquals(finalBalance, initialBalance); //unchanged as not possible
-
     }
 
     @Test
@@ -86,7 +85,5 @@ public class SavingsAccountTest {
         boolean expected = true;
         assertEquals(expected, actualValue);
     }
-
-
-
+    
 }
